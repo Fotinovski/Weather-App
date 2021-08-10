@@ -14,7 +14,7 @@ body {
   align-items: center;
   height: 100vh;
   font-family: "Montserrat", sans-serif;
-  background: #222;
+  background: #101010;
   background-image: url("https://source.unsplash.com/1600x900/?landscape");
   background-position: center;
   background-repeat: no-repeat;
@@ -25,7 +25,7 @@ body {
 
 .card {
   // filter: blur(1px);
-  background: #000000d0;
+  background: #000000f1;
   color: white;
   padding: 2em;
   border-radius: 10px;
@@ -66,7 +66,7 @@ body {
     }
   }
   .weather {
-      .city-continaer{
+      .city-container{
           i{
               padding-right: 1rem;
           }
@@ -78,15 +78,18 @@ body {
       padding-bottom: .8rem;
       display: block;
     }
-    .temp {
-      font-size: 4rem;
-      line-height: 0;
-    }
-    .feels_like {
-      opacity: 0.6;
-      font-weight: 400;
-      font-size: 1rem;
-    }
+    .temp-container {
+        
+        .temp {
+            font-size: 4rem;
+            line-height: 0;
+          }
+          .feels_like ,.min_temp , .max_temp {
+            opacity: 0.8;
+            font-weight: 400;
+            font-size: 1rem;
+          }
+    }    
     .description {
       text-transform: capitalize;
       margin-left: 8px;
@@ -112,6 +115,10 @@ body {
 .flex {
   display: flex;
   align-items: center;
+}
+.flex-between{
+    @extend .flex ;
+    justify-content: space-between;
 }
 h1 {
   line-height: 0;

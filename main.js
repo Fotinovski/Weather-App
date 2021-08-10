@@ -19,7 +19,7 @@ let weather = {
   displayWeather: function (data) {
     const { name } = data;
     const { icon, description } = data.weather[0];
-    const { temp, humidity, feels_like } = data.main;
+    const { temp, humidity, feels_like, temp_min, temp_max } = data.main;
     const { speed } = data.wind;
 
     //Dinamichen naslov i favicon
@@ -31,9 +31,13 @@ let weather = {
     document.querySelector(".city").innerText = name;
     document.querySelector(".icon").src =
       "https://openweathermap.org/img/wn/" + icon + ".png";
+
     document.querySelector(".description").innerText = description;
     document.querySelector(".temp").innerText = temp.toFixed(1) + " °C";
     document.querySelector(".feels_like").innerText = "Feels like: " + feels_like.toFixed(1) + " °C";
+
+    document.querySelector(".min_temp").innerText = temp_min.toFixed(1) + " °C";
+    document.querySelector(".max_temp").innerText =temp_max.toFixed(1) + " °C";
 
     document.querySelector(".humidity").innerText =
       "Humidity: " + humidity + "%";
