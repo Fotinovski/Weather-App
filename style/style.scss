@@ -5,8 +5,8 @@
 .flex {
   display: flex;
   align-items: center;
-  @media all and (max-width:500px) {
-      flex-direction:column;
+  @media all and (max-width: 500px) {
+    flex-direction: column;
   }
 }
 .flex-between {
@@ -44,9 +44,9 @@ body {
   max-width: 420px;
   margin: 1em;
 
-  @media all and (max-width:500px) {
+  @media all and (max-width: 500px) {
     text-align: center;
-}
+  }
 
   .search {
     display: flex;
@@ -88,8 +88,8 @@ body {
       }
       .region {
         position: relative;
-        @media all and (max-width:500px) {
-            display: flex;
+        @media all and (max-width: 500px) {
+          display: flex;
         }
         .country {
           position: absolute;
@@ -97,16 +97,16 @@ body {
           right: -1.6rem;
           font-size: 0.8rem;
           opacity: 0.7;
-          @media all and (max-width:500px) {
+          @media all and (max-width: 500px) {
             top: 1.3rem;
-          right: -2.5rem;
-          &::before{
+            right: -2.5rem;
+            &::before {
               content: "( ";
-          }
-          &::after{
+            }
+            &::after {
               content: " )";
+            }
           }
-        }
         }
       }
     }
@@ -127,11 +127,11 @@ body {
       .temp {
         font-size: 4rem;
         line-height: 0;
-        @media all and (max-width:500px) {
-            font-size: 3rem;
+        @media all and (max-width: 500px) {
+          font-size: 3rem;
         }
-        @media all and (max-width:350px) {
-            font-size: 2.5rem;
+        @media all and (max-width: 350px) {
+          font-size: 2.5rem;
         }
       }
       .feels_like,
@@ -142,12 +142,12 @@ body {
       }
     }
     .description-container {
-        margin-bottom: 2rem;
+      margin-bottom: 2rem;
       .description {
         text-transform: capitalize;
         padding-right: 1rem;
-        @media all and (max-width:500px) {
-            font-size: 1.2rem;
+        @media all and (max-width: 500px) {
+          font-size: 1.2rem;
         }
       }
     }
@@ -168,12 +168,22 @@ body {
   }
   .more-info {
     div {
+        
       p {
         font-size: 1rem;
-        line-height: 0.8rem;
-        @media all and (max-width:500px) {
-            line-height: 1.6;
+        opacity: .85;
+        @media all and (max-width: 500px) {
+          line-height: 1.6;
         }
+      }
+      .wind-direction {
+        // display: inline-block;
+      }
+      .wind-deg {
+        margin-left: 0.5rem;
+        font-size: inherit;
+        padding: 0;
+        opacity: 1;
       }
     }
   }
