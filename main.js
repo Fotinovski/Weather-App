@@ -38,8 +38,7 @@ let weather = {
     document.querySelector(".temp").innerText = temp.toFixed(1) + " °C";
     document.querySelector(".feels_like").innerText =
       "Feels like: " + feels_like.toFixed(1) + " °C";
-    document.querySelector(".min_temp").innerText = temp_min.toFixed(1) + " °C";
-    document.querySelector(".max_temp").innerText = temp_max.toFixed(1) + " °C";
+    document.querySelector(".min-max_temp").innerText = temp_min.toFixed(1) + " °C" + " | " +  temp_max.toFixed(1) + " °C";
 
     //Opis i slika
     document.querySelector(".icon").src =
