@@ -57,7 +57,7 @@ body {
     align-items: center;
     justify-content: center;
     padding-bottom: 1rem;
-    @media all and (max-width: 375px) {
+    @media all and (max-width: 500px) {
       padding-bottom: 0.5rem;
     }
     input.search-bar {
@@ -70,8 +70,9 @@ body {
       font-family: inherit;
       font-size: 105%;
       width: calc(100% - 100px);
-      @media all and (max-width: 375px) {
+      @media all and (max-width: 500px) {
         font-size: 85%;
+        width: 100%;
       }
     }
     button {
@@ -88,9 +89,8 @@ body {
       &:hover {
         background: #7c7c7c6b;
       }
-      @media all and (max-width: 375px) {
-        height: 34px;
-        width: 34px;
+      @media all and (max-width: 500px) {
+       display: none;
       }
     }
   }
