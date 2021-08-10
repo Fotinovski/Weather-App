@@ -86,6 +86,9 @@ body {
       i {
         padding-right: 1rem;
         font-size: 1.6rem;
+        @media all and (max-width: 500px){
+            padding-right: 0;
+        }
       }
       .region {
         position: relative;
