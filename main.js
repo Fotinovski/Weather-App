@@ -19,45 +19,55 @@ let weather = {
   displayWeather: function (data) {
     const { name } = data;
     const { icon, description } = data.weather[0];
-    const { temp, humidity, feels_like, temp_min, temp_max } = data.main;
+    const { temp, humidity, pressure, feels_like, temp_min, temp_max } = data.main;
     const { speed } = data.wind;
     const { country } = data.sys;
 
     //Dinamichen naslov i favicon
-    document.querySelector(".web-title").innerText = name + " " + (country) + " | " + temp.toFixed(1) + "°C";
+    document.querySelector(".web-title").innerText =
+      name + " - " + country + " | " + temp.toFixed(1) + "°C";
     document.querySelector(".favicon").href =
       "https://openweathermap.org/img/wn/" + icon + ".png";
 
-    //Glaven kontent*
+    //***Glaven kontent***
+    //Lokacija
     document.querySelector(".city").innerText = name;
     document.querySelector(".country").innerText = country;
 
+    // Temperaturi
+    document.querySelector(".temp").innerText = temp.toFixed(1) + " °C";
+    document.querySelector(".feels_like").innerText =
+      "Feels like: " + feels_like.toFixed(1) + " °C";
+    document.querySelector(".min_temp").innerText = temp_min.toFixed(1) + " °C";
+    document.querySelector(".max_temp").innerText = temp_max.toFixed(1) + " °C";
+
+    //Opis i slika
     document.querySelector(".icon").src =
       "https://openweathermap.org/img/wn/" + icon + ".png";
-
     document.querySelector(".description").innerText = description;
-    document.querySelector(".temp").innerText = temp.toFixed(1) + " °C";
-    document.querySelector(".feels_like").innerText = "Feels like: " + feels_like.toFixed(1) + " °C";
 
-    document.querySelector(".min_temp").innerText = temp_min.toFixed(1) + " °C";
-    document.querySelector(".max_temp").innerText =temp_max.toFixed(1) + " °C";
-
+    //Dopolnitelni informacii
     document.querySelector(".humidity").innerText =
       "Humidity: " + humidity + "%";
     document.querySelector(".wind").innerText =
       "Wind speed: " + speed + " km/h";
-
+      document.querySelector(".pressure").innerText =
+      "Pressure: " + pressure + " hPa";
+      
     //load
     document.querySelector(".weather").classList.remove("loading");
     //background slika
     document.body.style.backgroundImage =
       "url('https://source.unsplash.com/1600x900/?" + name + "')";
   },
+
   search: function () {
     this.fetchWeather(document.querySelector(".search-bar").value);
   },
 };
 
+
+// Search on click/keyup
 document.querySelector(".search button").addEventListener("click", function () {
   weather.search();
 });
@@ -70,13 +80,14 @@ document
     }
   });
 
+// Default lokacija
 weather.fetchWeather("Skopje");
+
+//Deneshen datum
 var today = new Date();
-var dd = String(today.getDate()).padStart(2, '0');
-var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var dd = String(today.getDate()).padStart(2, "0");
+var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
 var yyyy = today.getFullYear();
+today = dd + " / " + mm  + " / " + yyyy;
 
-today = mm + '/' + dd + '/' + yyyy;
-
-document
-  .querySelector(".date").innerHTML = today
+document.querySelector(".date").innerHTML = today;
