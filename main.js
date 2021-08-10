@@ -49,7 +49,7 @@ let weather = {
 
     //Opis i slika
     document.querySelector(".icon").src =
-      "https://openweathermap.org/img/wn/" + icon + ".png";
+      "https://openweathermap.org/img/wn/" + icon + "@2x.png";
     document.querySelector(".description").innerText = description;
 
     //Dopolnitelni informacii
@@ -173,3 +173,4 @@ today = dd + " / " + full_month(dt) + " / " + yyyy;
 
 document.querySelector(".date").innerHTML =
   dayName + "\xa0\xa0 | \xa0\xa0" + today;
+
