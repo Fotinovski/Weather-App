@@ -1,10 +1,14 @@
 let weather = {
   apiKey: "72198991b161114d2bc8dafb8e205188",
+//   lang = "en",
   fetchWeather: function (city) {
     fetch(
       "https://api.openweathermap.org/data/2.5/weather?q=" +
         city +
-        "&units=metric&appid=" +
+        "&units=metric"+ 
+        // "&lang="+
+        // this.lang
+        "&appid="+
         this.apiKey
     )
       .then((response) => {
@@ -25,7 +29,7 @@ let weather = {
 
     //Dinamichen naslov i favicon
     document.querySelector(".web-title").innerText =
-      name + " - " + country + " | " + temp.toFixed(1) + "°C";
+      name + " - " + country + "\xa0\xa0 | \xa0\xa0" + temp.toFixed(1) + "°C";
     document.querySelector(".favicon").href =
       "https://openweathermap.org/img/wn/" + icon + ".png";
 
@@ -38,7 +42,7 @@ let weather = {
     document.querySelector(".temp").innerText = temp.toFixed(1) + " °C";
     document.querySelector(".feels_like").innerText =
       "Feels like: " + feels_like.toFixed(1) + " °C";
-    document.querySelector(".min-max_temp").innerText = temp_min.toFixed(1) + " °C" + " | " +  temp_max.toFixed(1) + " °C";
+    document.querySelector(".min-max_temp").innerText = temp_min.toFixed(1) + " °C" + "\xa0 | \xa0" +  temp_max.toFixed(1) + " °C";
 
     //Opis i slika
     document.querySelector(".icon").src =
