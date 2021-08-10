@@ -70,6 +70,16 @@ body {
           i{
               padding-right: 1rem;
           }
+          .region{
+              position: relative;
+            .country {
+                position: absolute;
+                top: 0;
+                right: -1.6rem;
+                font-size: .8rem;
+                opacity: .7;
+            }
+            }
       }
     .date {
       opacity: 0.6;

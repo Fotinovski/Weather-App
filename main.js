@@ -21,14 +21,17 @@ let weather = {
     const { icon, description } = data.weather[0];
     const { temp, humidity, feels_like, temp_min, temp_max } = data.main;
     const { speed } = data.wind;
+    const { country } = data.sys;
 
     //Dinamichen naslov i favicon
-    document.querySelector(".web-title").innerText = name + " | " + temp.toFixed(1) + "°C";
+    document.querySelector(".web-title").innerText = name + " " + (country) + " | " + temp.toFixed(1) + "°C";
     document.querySelector(".favicon").href =
       "https://openweathermap.org/img/wn/" + icon + ".png";
 
     //Glaven kontent*
     document.querySelector(".city").innerText = name;
+    document.querySelector(".country").innerText = country;
+
     document.querySelector(".icon").src =
       "https://openweathermap.org/img/wn/" + icon + ".png";
 
