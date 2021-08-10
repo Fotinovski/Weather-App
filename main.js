@@ -83,11 +83,30 @@ document
 // Default lokacija
 weather.fetchWeather("Skopje");
 
-//Deneshen datum
-var today = new Date();
-var dd = String(today.getDate()).padStart(2, "0");
-var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
-var yyyy = today.getFullYear();
-today = dd + " / " + mm  + " / " + yyyy;
+//**Deneshen datum**
+let today = new Date();
 
-document.querySelector(".date").innerHTML = today;
+//Den
+const dd = String(today.getDate());
+//get full name
+const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const d = new Date();
+const dayName = days[d.getDay()];
+
+//Mesec
+Date.longMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+function full_month(dt)
+  { 
+   return Date.longMonths[dt.getMonth()]; 
+  }
+dt = new Date(); 
+const mm = String(today.getMonth() + 1);
+
+//Godina
+const yyyy = today.getFullYear();
+
+//Zaedno
+today = dd + " / " + full_month(dt)  + " / " + yyyy;
+  
+document.querySelector(".date").innerHTML = dayName + "\xa0\xa0 | \xa0\xa0"   + today;
+

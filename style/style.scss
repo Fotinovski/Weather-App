@@ -77,6 +77,7 @@ body {
     .city-container {
       i {
         padding-right: 1rem;
+        font-size: 1.6rem;
       }
       .region {
         position: relative;
@@ -89,14 +90,20 @@ body {
         }
       }
     }
-    .date {
-      opacity: 0.6;
-      font-weight: 400;
-      font-size: 0.8rem;
-      padding-bottom: 0.8rem;
-      display: block;
+    .date-container {
+      margin-bottom: 4rem;
+      .date,
+      .day {
+        opacity: 0.6;
+        font-weight: 400;
+        font-size: 0.8rem;
+        padding-bottom: 0.8rem;
+        display: block;
+      }
     }
+
     .temp-container {
+      margin-bottom: 2rem;
       .temp {
         font-size: 4rem;
         line-height: 0;
@@ -109,9 +116,12 @@ body {
         font-size: 1rem;
       }
     }
-    .description {
-      text-transform: capitalize;
-      padding-right: 1rem;
+    .description-container {
+        margin-bottom: 2rem;
+      .description {
+        text-transform: capitalize;
+        padding-right: 1rem;
+      }
     }
   }
 
@@ -132,8 +142,8 @@ body {
     div {
       p {
         font-size: 1rem;
-        line-height: .8rem;
-    }
+        line-height: 0.8rem;
+      }
     }
   }
 }
